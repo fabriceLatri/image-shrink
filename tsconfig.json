@@ -11,8 +11,10 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "react-jsx",
     "paths": {
-      "@electron/*": ["src/electron/*"]
+      "@electron/*": ["src/electron/*"],
+      "@app/*": ["src/app/*"]
     }
   },
   "include": ["src"]
