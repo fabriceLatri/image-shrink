@@ -1,1 +1,2 @@
-export const isMac = () => process.platform === 'darwin';
+export const isMac = process.platform === 'darwin';
+export const isDev = process.env.NODE_ENV !== 'production';

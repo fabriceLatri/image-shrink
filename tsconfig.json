@@ -12,9 +12,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["reflect-metadata"],
+    "lib": ["es6"],
     "paths": {
       "@electron/*": ["src/electron/*"],
-      "@app/*": ["src/app/*"]
+      "@domain/*": ["src/domain/*"],
+      "@app/*": ["src/app/*"],
+      "@infrastructure/*": ["src/infrastructure/*"]
     }
   },
   "include": ["src"]

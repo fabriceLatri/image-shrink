@@ -1,5 +1,9 @@
-import createMainMenu from '@electron/menu';
+import 'reflect-metadata';
+
+import { IMenu } from '@domain/models/interfaces/IMenu';
 import createShortcuts from '@electron/shortcuts';
+import { DIContainer } from '@infrastructure/DI/inversify.config';
+import { TYPES } from '@infrastructure/DI/types';
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
 
@@ -40,8 +44,8 @@ const createWindow = (): BrowserWindow => {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   const mainWindow = createWindow();
-
-  createMainMenu();
+  const menu: IMenu = DIContainer.get<IMenu>(TYPES.IMenu);
+  menu.createMainMenu();
 
   createShortcuts(mainWindow);
 });
