@@ -2,9 +2,9 @@ import 'reflect-metadata';
 
 import { app } from 'electron';
 
-import { DIContainer } from '@infrastructure/DI/inversify.config';
-import { TYPES } from '@infrastructure/DI/types';
-import ElectronApp from '@infrastructure/app/App';
+import { DIContainer } from '@infrastructure/config/DI/inversify.config';
+import { TYPES } from '@infrastructure/config/DI/types';
+import ElectronApp from '@presentation/electron/ElectronApp';
 
 try {
   const mainApplication = DIContainer.get<ElectronApp>(TYPES.ElectronApp);

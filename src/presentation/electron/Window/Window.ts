@@ -3,12 +3,12 @@ import path from 'path';
 import { BrowserWindow, globalShortcut } from 'electron';
 import { inject, injectable } from 'inversify';
 
-import WindowPort from '@domain/ports/Window';
-import { TYPES } from '@infrastructure/DI/types';
-import { IMenu } from '@domain/models/interfaces/IMenu';
+import AbstractWindow from '@presentation/electron/Window/AbstractWindow';
+import { TYPES } from '@infrastructure/config/DI/types';
+import { IMenu } from '@presentation/electron/Menu/contracts/IMenu';
 
 @injectable()
-class WindowApdater extends WindowPort {
+class Window extends AbstractWindow {
   private _mainWindow: BrowserWindow;
 
   @inject(TYPES.IMenu) private readonly _menu: IMenu;
@@ -48,12 +48,10 @@ class WindowApdater extends WindowPort {
   }
 
   registerShortcuts(): void {
-    const isRegistered = globalShortcut.register('CmdOrCtrl+L', () =>
+    globalShortcut.register('CmdOrCtrl+L', () =>
       this._mainWindow?.webContents.toggleDevTools()
     );
-
-    console.log(isRegistered);
   }
 }
 
-export default WindowApdater;
+export default Window;

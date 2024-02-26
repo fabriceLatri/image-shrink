@@ -1,7 +1,7 @@
 import { BrowserWindow, app } from 'electron';
 import { inject, injectable } from 'inversify';
-import { TYPES } from '@infrastructure/DI/types';
-import { IWindow } from '@domain/models/interfaces/IWindow';
+import { TYPES } from '@infrastructure/config/DI/types';
+import { IWindow } from '@presentation/electron/Window/contracts/IWindow';
 
 @injectable()
 class ElectronApp {

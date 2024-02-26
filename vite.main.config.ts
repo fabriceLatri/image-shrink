@@ -13,9 +13,9 @@ export default defineConfig({
     browserField: false,
     mainFields: ['module', 'jsnext:main', 'jsnext'],
     alias: {
-      '@electron': resolve(ROOT_DIR, 'electron'),
       '@domain': resolve(ROOT_DIR, 'domain'),
       '@infrastructure': resolve(ROOT_DIR, 'infrastructure'),
+      '@presentation': resolve(ROOT_DIR, 'presentation'),
     },
   },
 });

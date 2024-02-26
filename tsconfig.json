@@ -15,12 +15,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "types": ["reflect-metadata"],
-    "lib": ["es6"],
+    "lib": ["es6", "dom"],
     "paths": {
-      "@electron/*": ["src/electron/*"],
       "@domain/*": ["src/domain/*"],
-      "@app/*": ["src/app/*"],
-      "@infrastructure/*": ["src/infrastructure/*"]
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@presentation/*": ["src/presentation/*"]
     }
   },
   "include": ["src"]

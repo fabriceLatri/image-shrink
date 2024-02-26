@@ -7,7 +7,7 @@ const ROOT_DIR = resolve(__dirname, 'src');
 export default defineConfig({
   resolve: {
     alias: {
-      '@app': resolve(ROOT_DIR, 'app'),
+      '@presentation': resolve(ROOT_DIR, 'presentation'),
     },
   },
 });

@@ -1,13 +1,13 @@
 import { Menu } from 'electron';
 import { injectable } from 'inversify';
 
-import MenuPort from '@domain/ports/Menu';
-import { isDev, isMac } from '@electron/utils';
+import AbstractMenu from '@presentation/electron/Menu/AbstractMenu';
+import { isDev, isMac } from '@presentation/electron/utils';
 
-import type { AppMenuItems } from '@infrastructure/adapters/Menu/types';
+import type { AppMenuItems } from '@presentation/electron/Menu/types';
 
 @injectable()
-class MenuAdapter extends MenuPort {
+class MenuApp extends AbstractMenu {
   private readonly fileMenu: AppMenuItems = isMac ? [{ role: 'appMenu' }] : [];
 
   private readonly developerMenu: AppMenuItems = isDev
@@ -37,4 +37,4 @@ class MenuAdapter extends MenuPort {
   }
 }
 
-export default MenuAdapter;
+export default MenuApp;
